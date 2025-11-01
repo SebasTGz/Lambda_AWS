@@ -2,8 +2,8 @@ import "reflect-metadata";
 
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity("products")
-export class Product {
+@Entity("carro")
+export class Carro {
   @PrimaryGeneratedColumn({ type: "bigint" })
   id!: number;
 
@@ -17,10 +17,10 @@ export class Product {
   productPrice!: number;
 
   @Column({ type: "varchar", length: 255 })
-  productCategory!: string;
+  carroMarca!: string; //categoria
 
   @Column({ type: "varchar", length: 255 })
-  subCategory!: string;
+  carroColor!: string; //subcategoria
 
   @Column({ type: "timestamp", default: () => "CURRENT_TIMESTAMP" })
   createdAt!: Date;

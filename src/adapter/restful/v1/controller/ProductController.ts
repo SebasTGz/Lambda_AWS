@@ -1,13 +1,13 @@
-import { AdapterProductEntity } from "./Entity/AdapterProductEntity";
+import { AdapterCarroEntity } from "./Entity/AdapterCarroEntity";
 
 export interface ProductController {
   handleRequest(event: any): Promise<any>;
-  getProducts(): Promise<AdapterProductEntity[]>;
-  getProductById(id: number): Promise<AdapterProductEntity>;
-  createProduct(product: AdapterProductEntity): Promise<AdapterProductEntity>;
+  getProducts(): Promise<AdapterCarroEntity[]>;
+  getProductById(id: number): Promise<AdapterCarroEntity>;
+  createProduct(product: AdapterCarroEntity): Promise<AdapterCarroEntity>;
   updateProduct(
     id: number,
-    product: AdapterProductEntity,
-  ): Promise<AdapterProductEntity>;
+    product: AdapterCarroEntity,
+  ): Promise<AdapterCarroEntity>;
   deleteProduct(id: number): Promise<void>;
 }

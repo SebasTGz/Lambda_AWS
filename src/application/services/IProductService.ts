@@ -1,9 +1,9 @@
-import { DomainProductEntity } from '../../domain/Entities/DomainProductEntity';
+import { DomainCarroEntity } from '../../domain/Entities/DomainCarroEntity';
 
 export interface ProductService {
-  getProductById(id: number): Promise<DomainProductEntity>;
-  getProducts(): Promise<DomainProductEntity[]>;
-  createProduct(product: DomainProductEntity): Promise<DomainProductEntity>;
-  updateProduct(id: number, product: DomainProductEntity): Promise<DomainProductEntity>;
+  getProductById(id: number): Promise<DomainCarroEntity>;
+  getProducts(): Promise<DomainCarroEntity[]>;
+  createProduct(product: DomainCarroEntity): Promise<DomainCarroEntity>;
+  updateProduct(id: number, product: DomainCarroEntity): Promise<DomainCarroEntity>;
   deleteProduct(id: number): Promise<void>;
 }

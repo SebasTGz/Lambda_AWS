@@ -1,10 +1,10 @@
-export interface DomainProductEntity {
+export interface DomainCarroEntity {
   id?: number;
   name: string;
   description: string;
   price: number;
-  category: string;
-  subCategory: string;
+  marca: string; //categoria
+  color: string; //subcategoria
   createdAt?: Date;
   updatedAt?: Date;
   createdBy: string;

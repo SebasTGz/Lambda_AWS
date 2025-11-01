@@ -2,7 +2,7 @@ import { inject, injectable } from "inversify";
 
 import { ProductService } from "../../../../application/services/IProductService";
 import { TYPES } from "../../../../ioc/Types";
-import { AdapterProductEntity } from "./Entity/AdapterProductEntity";
+import { AdapterCarroEntity } from "./Entity/AdapterCarroEntity";
 import { IAdapterMapper } from "./Mapper/IAdapterMapper";
 import { ProductController } from "./ProductController";
 
@@ -53,7 +53,7 @@ export class ProductControllerImpl implements ProductController {
               Number.parseInt(event?.pathParameters?.id),
             );
             return {
-              message: "Product deleted successfully",
+              message: "Carro eliminado exitosamente",
             };
           }
           return {
@@ -73,19 +73,19 @@ export class ProductControllerImpl implements ProductController {
     }
   }
 
-  async getProducts(): Promise<AdapterProductEntity[]> {
+  async getProducts(): Promise<AdapterCarroEntity[]> {
     const products = await this.productService.getProducts();
     return this.mapper.toAdapterList(products);
   }
 
-  async getProductById(id: number): Promise<AdapterProductEntity> {
+  async getProductById(id: number): Promise<AdapterCarroEntity> {
     const product = await this.productService.getProductById(id);
     return this.mapper.toAdapter(product);
   }
 
   async createProduct(
-    product: AdapterProductEntity,
-  ): Promise<AdapterProductEntity> {
+    product: AdapterCarroEntity,
+  ): Promise<AdapterCarroEntity> {
     const productEntity = this.mapper.toDomain(product);
     const createdProduct =
       await this.productService.createProduct(productEntity);
@@ -94,8 +94,8 @@ export class ProductControllerImpl implements ProductController {
 
   async updateProduct(
     id: number,
-    product: AdapterProductEntity,
-  ): Promise<AdapterProductEntity> {
+    product: AdapterCarroEntity,
+  ): Promise<AdapterCarroEntity> {
     console.log("product from controller", product);
     const productEntity = this.mapper.toDomain(product);
     console.log("productEntity from controller", productEntity);

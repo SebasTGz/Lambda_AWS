@@ -1,9 +1,9 @@
-import { DomainProductEntity } from '../../../domain/Entities/DomainProductEntity';
-import { Product } from '../Entity/Product';
+import { DomainCarroEntity } from '../../../domain/Entities/DomainCarroEntity';
+import { Carro } from '../Entity/Carro';
 
 export interface IInfraestructureMapper {
-  toDomain(entity: Product): DomainProductEntity;
-  toEntity(domain: DomainProductEntity): Product;
-  toDomainList(entityList: Product[]): DomainProductEntity[];
-  toEntityList(domainList: DomainProductEntity[]): Product[];
+  toDomain(entity: Carro): DomainCarroEntity;
+  toEntity(domain: DomainCarroEntity): Carro;
+  toDomainList(entityList: Carro[]): DomainCarroEntity[];
+  toEntityList(domainList: DomainCarroEntity[]): Carro[];
 }

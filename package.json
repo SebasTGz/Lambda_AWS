@@ -1,5 +1,5 @@
 {
-   "name": "ms_products_lambdas",
+   "name": "ms_carros_lambda",
    "version": "0.0.1",
    "description": "Awesome project developed with TypeORM.",
    "type": "commonjs",
@@ -21,7 +21,7 @@
       "stylelint": "stylelint \"src/**/*.{css,scss,sass,less,styl}\"",
       "stylelint:fix": "stylelint --fix \"src/**/*.{css,scss,sass,less,styl}\"",
       "stylelint:write": "stylelint --write \"src/**/*.{css,scss,sass,less,styl}\"",
-      "zip": "cd dist && bestzip ../releases/ms-products-lambda-v0.0.1.zip *"
+      "zip": "cd dist && bestzip ../releases/ms-carros-lambda-v0.0.1.zip *"
    },
    "devDependencies": {
       "@eslint/js": "^9.38.0",

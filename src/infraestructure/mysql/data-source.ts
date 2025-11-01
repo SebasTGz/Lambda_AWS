@@ -2,7 +2,7 @@ import "reflect-metadata";
 
 import { DataSource } from "typeorm";
 
-import { Product } from "./Entity/Product";
+import { Carro } from "./Entity/Carro";
 
 export const AppDataSource = new DataSource({
   type: "mysql",
@@ -13,7 +13,7 @@ export const AppDataSource = new DataSource({
   database: process.env.DB_DATABASE,
   synchronize: process.env.NODE_ENV !== "production", // Solo en desarrollo
   logging: process.env.NODE_ENV === "development",
-  entities: [Product],
+  entities: [Carro],
   migrations: [],
   subscribers: [],
   // Configuraciones optimizadas para Lambda

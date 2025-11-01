@@ -1,40 +1,40 @@
-import { DomainProductEntity } from '../../../domain/Entities/DomainProductEntity';
-import { Product } from '../Entity/Product';
+import { DomainCarroEntity } from '../../../domain/Entities/DomainCarroEntity';
+import { Carro } from '../Entity/Carro';
 import { IInfraestructureMapper } from './IIfraestructureMapper';
 
 export class InfraestructureMapperImpl implements IInfraestructureMapper {
-  toDomain(entity: Product): DomainProductEntity {
+  toDomain(entity: Carro): DomainCarroEntity {
     return {
       id: entity.id,
       name: entity.productName,
       description: entity.productDescription,
       price: entity.productPrice,
-      category: entity.productCategory,
-      subCategory: entity.subCategory,
+      marca: entity.carroMarca, //categoria
+      color: entity.carroColor, //subcategoria
       createdAt: entity.createdAt,
       updatedAt: entity.updatedAt,
       createdBy: entity.createdBy,
       updatedBy: entity.updatedBy,
     };
   }
-  toEntity(domain: DomainProductEntity): Product {
+  toEntity(domain: DomainCarroEntity): Carro {
     return {
       id: domain.id,
       productName: domain.name,
       productDescription: domain.description,
       productPrice: domain.price,
-      productCategory: domain.category,
-      subCategory: domain.subCategory,
+      carroMarca: domain.marca, //marca
+      carroColor: domain.color, //color
       createdAt: domain.createdAt,
       updatedAt: domain.updatedAt,
       createdBy: domain.createdBy,
       updatedBy: domain.updatedBy,
-    } as Product;
+    } as Carro;
   }
-  toDomainList(entityList: Product[]): DomainProductEntity[] {
+  toDomainList(entityList: Carro[]): DomainCarroEntity[] {
     return entityList.map(this.toDomain);
   }
-  toEntityList(domainList: DomainProductEntity[]): Product[] {
+  toEntityList(domainList: DomainCarroEntity[]): Carro[] {
     return domainList.map(this.toEntity);
   }
 }

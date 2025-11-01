@@ -1,9 +1,9 @@
-import { DomainProductEntity } from "../../../../../domain/Entities/DomainProductEntity";
-import { AdapterProductEntity } from "../Entity/AdapterProductEntity";
+import { DomainCarroEntity } from "../../../../../domain/Entities/DomainCarroEntity";
+import { AdapterCarroEntity } from "../Entity/AdapterCarroEntity";
 
 export interface IAdapterMapper {
-  toDomain(adapterEntity: AdapterProductEntity): DomainProductEntity;
-  toAdapter(domainEntity: DomainProductEntity): AdapterProductEntity;
-  toDomainList(adapterList: AdapterProductEntity[]): DomainProductEntity[];
-  toAdapterList(domainList: DomainProductEntity[]): AdapterProductEntity[];
+  toDomain(adapterEntity: AdapterCarroEntity): DomainCarroEntity;
+  toAdapter(domainEntity: DomainCarroEntity): AdapterCarroEntity;
+  toDomainList(adapterList: AdapterCarroEntity[]): DomainCarroEntity[];
+  toAdapterList(domainList: DomainCarroEntity[]): AdapterCarroEntity[];
 }

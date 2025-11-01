@@ -4,7 +4,7 @@ import { ProductService } from "../application/services/IProductService";
 import { InfraestructureMapperImpl } from "../infraestructure/mysql/Mapper/InfraestructureMapperImpl";
 import { MysqlProductRespository } from "../infraestructure/mysql/Respository/MysqlProductRespository";
 import { TYPES } from "../ioc/Types";
-import { DomainProductEntity } from "./Entities/DomainProductEntity";
+import { DomainCarroEntity } from "./Entities/DomainCarroEntity";
 
 @injectable()
 export class ProductServiceImpl implements ProductService {
@@ -15,25 +15,25 @@ export class ProductServiceImpl implements ProductService {
     private readonly mapper: InfraestructureMapperImpl,
   ) {}
 
-  async getProducts(): Promise<DomainProductEntity[]> {
+  async getProducts(): Promise<DomainCarroEntity[]> {
     const products = await this.repository.findAll();
     if (!products) {
-      throw new Error("Products not found");
+      throw new Error("Carro no encontrado");
     }
     return this.mapper.toDomainList(products);
   }
 
-  async getProductById(id: number): Promise<DomainProductEntity> {
+  async getProductById(id: number): Promise<DomainCarroEntity> {
     const product = await this.repository.findById(id);
     if (!product) {
-      throw new Error("Product not found");
+      throw new Error("Carro no encontrado");
     }
     return this.mapper.toDomain(product);
   }
 
   async createProduct(
-    product: DomainProductEntity,
-  ): Promise<DomainProductEntity> {
+    product: DomainCarroEntity,
+  ): Promise<DomainCarroEntity> {
     console.log("product from domain service", product);
     const entity = this.mapper.toEntity(product);
     console.log("entity from domain service", entity);
@@ -43,11 +43,11 @@ export class ProductServiceImpl implements ProductService {
 
   async updateProduct(
     id: number,
-    product: DomainProductEntity,
-  ): Promise<DomainProductEntity> {
+    product: DomainCarroEntity,
+  ): Promise<DomainCarroEntity> {
     const productEntity = await this.repository.findById(id);
     if (!productEntity) {
-      throw new Error("Product not found");
+      throw new Error("Carro no encontrado");
     }
     const entity = this.mapper.toEntity({ ...productEntity, ...product });
     const updatedProduct = await this.repository.update(entity);
@@ -57,7 +57,7 @@ export class ProductServiceImpl implements ProductService {
   async deleteProduct(id: number): Promise<void> {
     const productEntity = await this.repository.findById(id);
     if (!productEntity) {
-      throw new Error("Product not found");
+      throw new Error("Carro no encontrado");
     }
     await this.repository.delete(id);
   }
