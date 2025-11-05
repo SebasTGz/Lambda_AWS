@@ -6,11 +6,11 @@ export class InfraestructureMapperImpl implements IInfraestructureMapper {
   toDomain(entity: Carro): DomainCarroEntity {
     return {
       id: entity.id,
-      name: entity.productName,
-      description: entity.productDescription,
-      price: entity.productPrice,
-      marca: entity.carroMarca, //categoria
+      marca: entity.carroMarca, 
+      modelo: entity.carroModelo,
       color: entity.carroColor, //subcategoria
+      anio: entity.carroAnio, //categoria
+      precio: entity.carroPrecio, //precio
       createdAt: entity.createdAt,
       updatedAt: entity.updatedAt,
       createdBy: entity.createdBy,
@@ -20,11 +20,11 @@ export class InfraestructureMapperImpl implements IInfraestructureMapper {
   toEntity(domain: DomainCarroEntity): Carro {
     return {
       id: domain.id,
-      productName: domain.name,
-      productDescription: domain.description,
-      productPrice: domain.price,
       carroMarca: domain.marca, //marca
+      carroModelo:domain.modelo,
       carroColor: domain.color, //color
+      carroAnio: domain.anio, //año
+      carroPrecio: domain.precio, //precio
       createdAt: domain.createdAt,
       updatedAt: domain.updatedAt,
       createdBy: domain.createdBy,

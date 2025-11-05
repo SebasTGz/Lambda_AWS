@@ -1,10 +1,10 @@
 export interface DomainCarroEntity {
   id?: number;
-  name: string;
-  description: string;
-  price: number;
-  marca: string; //categoria
-  color: string; //subcategoria
+  marca: string;
+  modelo: string;
+  color: string; //categoria
+  anio: number;
+  precio: number;
   createdAt?: Date;
   updatedAt?: Date;
   createdBy: string;

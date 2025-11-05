@@ -6,11 +6,11 @@ export class AdapterMapperImpl implements IAdapterMapper {
   toDomain(adapterEntity: AdapterCarroEntity): DomainCarroEntity {
     return {
       id: adapterEntity.id,
-      name: adapterEntity.nombre,
-      description: adapterEntity.descripcion,
-      price: adapterEntity.precio,
-      marca: adapterEntity.marca, //categoria
+      marca: adapterEntity.marca,
+      modelo: adapterEntity.modelo,
       color: adapterEntity.color, //subcategoria
+      anio: adapterEntity.anio, 
+      precio: adapterEntity.precio,
       createdAt: adapterEntity.fechaCreacion,
       updatedAt: adapterEntity.fechaActualizacion,
       createdBy: adapterEntity.creadoPor,
@@ -20,11 +20,11 @@ export class AdapterMapperImpl implements IAdapterMapper {
   toAdapter(domainEntity: DomainCarroEntity): AdapterCarroEntity {
     return {
       id: domainEntity.id,
-      nombre: domainEntity.name,
-      descripcion: domainEntity.description,
-      precio: domainEntity.price,
-      marca: domainEntity.marca, //categoria
+      marca: domainEntity.marca,
+      modelo: domainEntity.modelo,
       color: domainEntity.color,
+      anio: domainEntity.anio, //categoria
+      precio: domainEntity.precio,
       fechaCreacion: domainEntity.createdAt,
       fechaActualizacion: domainEntity.updatedAt,
       creadoPor: domainEntity.createdBy,

@@ -4,7 +4,7 @@ import { ProductService } from "../../../../application/services/IProductService
 import { TYPES } from "../../../../ioc/Types";
 import { AdapterCarroEntity } from "./Entity/AdapterCarroEntity";
 import { IAdapterMapper } from "./Mapper/IAdapterMapper";
-import { ProductController } from "./ProductController";
+import { ProductController } from "./CarroController";
 
 @injectable()
 export class ProductControllerImpl implements ProductController {

@@ -1,10 +1,10 @@
 export interface AdapterCarroEntity {
   id?: number;
-  nombre: string;
-  descripcion: string;
-  precio: number;
   marca: string; //categoria
+  modelo: string; //modelo
   color: string; //subcategoria
+  anio: number; //año
+  precio: number; //precio
   fechaCreacion?: Date;
   fechaActualizacion?: Date;
   creadoPor: string;

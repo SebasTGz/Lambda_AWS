@@ -1,6 +1,6 @@
 import "reflect-metadata";
 
-import { ProductController } from "./adapter/restful/v1/controller/ProductController";
+import { ProductController } from "./adapter/restful/v1/controller/CarroController";
 import { AppDataSource } from "./infraestructure/mysql/data-source";
 import { container } from "./inversify.config";
 import { TYPES } from "./ioc/Types";
