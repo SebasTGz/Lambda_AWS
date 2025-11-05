@@ -4,23 +4,23 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity("carro")
 export class Carro {
-  @PrimaryGeneratedColumn({ type: "bigint" })
+  @PrimaryGeneratedColumn({ type: "int" })
   id!: number;
 
   @Column({ type: "varchar", length: 255 })
-  productName!: string;
+  carroMarca!: string; //marca
 
   @Column({ type: "varchar", length: 255 })
-  productDescription!: string;
+  carroModelo!: string; //modelo
+
+  @Column({ type: "varchar", length: 255 })
+  carroColor!: string; //color
+
+  @Column({ type: "number"})
+  carroAnio!: number; //año
 
   @Column({ type: "decimal", precision: 10, scale: 2 })
-  productPrice!: number;
-
-  @Column({ type: "varchar", length: 255 })
-  carroMarca!: string; //categoria
-
-  @Column({ type: "varchar", length: 255 })
-  carroColor!: string; //subcategoria
+  carroPrecio!: number; //precio
 
   @Column({ type: "timestamp", default: () => "CURRENT_TIMESTAMP" })
   createdAt!: Date;
