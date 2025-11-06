@@ -16,7 +16,7 @@ export class Carro {
   @Column({ type: "varchar", length: 255 })
   carroColor!: string; //color
 
-  @Column({ type: "number"})
+  @Column({ type: "int"})
   carroAnio!: number; //año
 
   @Column({ type: "decimal", precision: 10, scale: 2 })
